@@ -20,6 +20,10 @@ const firebaseErrorHandler = (e:FirebaseError) => {
             break
         case 'auth/internal-error':
             errorMessage = 'Error inesperado del sistema. Vuelva a intentar más tarde.'
+            break
+        case 'auth/too-many-requests':
+            errorMessage = 'Demasiados intentos. Intente nuevamente en un rato.'
+            break
         default:
             errorMessage = e.code
     }
